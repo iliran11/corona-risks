@@ -41,9 +41,11 @@ const Risk = () => {
           flex: auto;
           flex-direction: column;
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           font-size: 28px;
           font-weight: 700;
+          margin-top: 150px;
+          margin-bottom: 500px;
 
           flex-basis: 5%;
         }
@@ -67,6 +69,10 @@ const Risk = () => {
           .indicator {
             flex-direction: row;
             border-bottom: 30px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            justify-content: space-around;
+
           }
           .activity-column {
             border: none;

@@ -5,6 +5,7 @@ import BasicRules from "../src/BasicRules";
 const title = "פעילויות שונות לפי דרגות סיכון להדבקה";
 const description = "מידע לגבי הסיכון להדבקה בפעילויות שונות";
 const maskBig = "/static/mask-big.png";
+const linkedinUrl = "https://www.linkedin.com/in/liran-cohen-501a9923/";
 
 export default function Home() {
   return (
@@ -28,9 +29,13 @@ export default function Home() {
       {/* <img src="/static/mask.png" /> */}
       <Risk />
       {/* <BasicRules /> */}
+
+      {/* <a href={linkedinUrl} id="contact-me">
+        <img src="/static/linkedin.png" />
+      </a> */}
       <style jsx>{`
         h1 {
-          font-size: 40px;
+          font-size: 28px;
           padding: 20px 0px;
           text-align: center;
           color: var(--purple);
@@ -39,8 +44,22 @@ export default function Home() {
           align-items: center;
           justify-content: center;
         }
+        #contact-me {
+          position: sticky;
+          bottom: 0px;
+          cursor: pointer;
+        }
         img {
           margin-right: 5px;
+        }
+        @media only screen and (min-width: 1020px) {
+          h1 {
+            font-size: 40px;
+          }
+          #contact-me {
+            position: fixed;
+            bottom: 0px;
+          }
         }
       `}</style>
       <style jsx global>{`
