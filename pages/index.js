@@ -1,21 +1,33 @@
 import Head from "next/head";
 import Risk from "../src/Risk";
+import BasicRules from "../src/BasicRules";
+
+const title = "פעילויות שונות לפי דרגות סיכון להדבקה";
+const description = "מידע לגבי הסיכון להדבקה בפעילויות שונות";
+const maskBig = "/static/mask-big.png";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>דרגות סיכון להדבקה בקורונה</title>
+        <link rel="icon" href="/static/virus.png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;.700&display=swap"
           rel="stylesheet"
         />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:url" content={"https://www.corona-risks.co.il"} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={maskBig} />
       </Head>
-      <h1>פעילויות שונות לפי דרגות סיכון להדבקה</h1>
-      <main className="table">
-        <Risk />
-      </main>
+      <h1>
+        <span>{title}</span>
+      </h1>
+      {/* <img src="/static/mask.png" /> */}
+      <Risk />
+      {/* <BasicRules /> */}
       <style jsx>{`
         h1 {
           font-size: 40px;
@@ -23,35 +35,12 @@ export default function Home() {
           text-align: center;
           color: var(--purple);
           font-weight: 700;
-        }
-        .table {
-          padding: 10px;
-          margin: 0px 0px;
-          border-radius: 0px;
           display: flex;
-          flex-direction: row;
-          flex: auto;
-          background: rgb(253, 237, 182);
-          background: linear-gradient(
-            to bottom,
-            rgba(253, 237, 182, 0.9) 0%,
-            rgba(246, 170, 41, 0.7) 48%,
-            rgba(255, 0, 0, 0.6) 88%
-          );
+          align-items: center;
+          justify-content: center;
         }
-
-        @media only screen and (min-width: 1020px) {
-          .table {
-            flex-direction: column;
-            background: linear-gradient(
-              to left,
-              rgba(253, 237, 182, 0.9) 0%,
-              rgba(246, 170, 41, 0.7) 48%,
-              rgba(255, 0, 0, 0.6) 88%
-            );
-            margin: 0px 10px;
-            border-radius: 6px;
-          }
+        img {
+          margin-right: 5px;
         }
       `}</style>
       <style jsx global>{`
@@ -124,10 +113,6 @@ export default function Home() {
         }
 
         /* Make images easier to work with */
-        img {
-          max-width: 100%;
-          display: block;
-        }
 
         /* Natural flow and rhythm in articles by default */
         article > * + * {

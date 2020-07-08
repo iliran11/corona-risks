@@ -54,3 +54,4 @@ export default [
   ],
   ["בילוי במועדון לילה"],
 ];
+export const basicRules = ["מסכה", "ריחוק פיזי", "היגיינת ידים"];
