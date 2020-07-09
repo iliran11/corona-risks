@@ -5,7 +5,13 @@ import BasicRules from "../src/BasicRules";
 const title = "פעילויות שונות לפי דרגות סיכון להדבקה";
 const description = "מידע לגבי הסיכון להדבקה בפעילויות שונות";
 const maskBig = "/static/mask-big.png";
-const linkedinUrl = "https://www.linkedin.com/in/liran-cohen-501a9923/";
+// const linkedinUrl = "https://www.linkedin.com/in/liran-cohen-501a9923/";
+const analyticsScript = `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172145945-1');
+`;
 
 export default function Home() {
   return (
@@ -22,6 +28,15 @@ export default function Home() {
         <meta property="og:url" content={"https://www.corona-risks.co.il"} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={maskBig} />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-172145945-1"
+        ></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-172145945-1"
+        ></script>
+        <script dangerouslySetInnerHTML={{ __html: analyticsScript }} />
       </Head>
       <h1>
         <span>{title}</span>
